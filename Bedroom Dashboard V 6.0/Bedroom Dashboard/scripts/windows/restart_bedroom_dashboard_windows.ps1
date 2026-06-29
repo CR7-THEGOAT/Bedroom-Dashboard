@@ -18,7 +18,7 @@ $BackendErr = Join-Path $LogDir "backend-auto.err.log"
 $FrontendOut = Join-Path $LogDir "frontend-auto.out.log"
 $FrontendErr = Join-Path $LogDir "frontend-auto.err.log"
 
-function Write-Bedroom DashboardLog {
+function Write-BedroomDashboardLog {
   param([string]$Message)
   $line = "[{0}] [{1}] {2}" -f (Get-Date -Format "yyyy-MM-dd HH:mm:ss"), $Reason, $Message
   Add-Content -Path $LogFile -Value $line
@@ -47,7 +47,7 @@ function Stop-PortListener {
 
   foreach ($owner in $owners) {
     if ($owner -and $owner -ne $PID) {
-      Write-Bedroom DashboardLog "Stopping stale process $owner on port $Port"
+      Write-BedroomDashboardLog "Stopping stale process $owner on port $Port"
       Stop-Process -Id $owner -Force -ErrorAction SilentlyContinue
     }
   }
@@ -64,7 +64,7 @@ function Ensure-BackendEnvironment {
   }
 
   if (-not (Test-Path $VenvPython)) {
-    Write-Bedroom DashboardLog "Creating backend virtual environment"
+    Write-BedroomDashboardLog "Creating backend virtual environment"
     if (Test-Path $BundledPython) {
       & $BundledPython -m venv (Join-Path $BackendDir ".venv")
     } else {
@@ -82,7 +82,7 @@ function Ensure-BackendEnvironment {
   }
 
   if ($requirementsNeedInstall) {
-    Write-Bedroom DashboardLog "Installing backend Python requirements"
+    Write-BedroomDashboardLog "Installing backend Python requirements"
     & $VenvPython -m pip install -r $Requirements | Out-Null
     Set-Content -Path $Marker -Value (Get-Date -Format o)
   }
@@ -90,11 +90,11 @@ function Ensure-BackendEnvironment {
   return $VenvPython
 }
 
-function Start-Bedroom DashboardBackend {
+function Start-BedroomDashboardBackend {
   $VenvPython = Ensure-BackendEnvironment
   $command = "set ALLOW_DEVICE_CONTROL=true&& `"$VenvPython`" -m uvicorn main:app --host 0.0.0.0 --port 8787"
 
-  Write-Bedroom DashboardLog "Starting backend on 0.0.0.0:8787"
+  Write-BedroomDashboardLog "Starting backend on 0.0.0.0:8787"
   Start-Process -FilePath "cmd.exe" `
     -ArgumentList "/c", $command `
     -WorkingDirectory $BackendDir `
@@ -105,50 +105,50 @@ function Start-Bedroom DashboardBackend {
   Start-Sleep -Seconds 3
 }
 
-function Ensure-Bedroom DashboardBackend {
+function Ensure-BedroomDashboardBackend {
   if ($ForceRestart) {
-    Write-Bedroom DashboardLog "Force restarting backend"
+    Write-BedroomDashboardLog "Force restarting backend"
     if (Test-PortListening -Port 8787) {
       Stop-PortListener -Port 8787
       Start-Sleep -Seconds 1
     }
-    Start-Bedroom DashboardBackend
+    Start-BedroomDashboardBackend
     if (Test-BackendHealth) {
-      Write-Bedroom DashboardLog "Backend force restart recovered"
+      Write-BedroomDashboardLog "Backend force restart recovered"
     } else {
-      Write-Bedroom DashboardLog "Backend still failed after force restart. Check $BackendErr"
+      Write-BedroomDashboardLog "Backend still failed after force restart. Check $BackendErr"
     }
     return
   }
 
   if (Test-BackendHealth) {
-    Write-Bedroom DashboardLog "Backend is healthy"
+    Write-BedroomDashboardLog "Backend is healthy"
     return
   }
 
   if (Test-PortListening -Port 8787) {
-    Write-Bedroom DashboardLog "Backend port is occupied but health check failed"
+    Write-BedroomDashboardLog "Backend port is occupied but health check failed"
     Stop-PortListener -Port 8787
     Start-Sleep -Seconds 1
   }
 
-  Start-Bedroom DashboardBackend
+  Start-BedroomDashboardBackend
 
   if (Test-BackendHealth) {
-    Write-Bedroom DashboardLog "Backend recovered"
+    Write-BedroomDashboardLog "Backend recovered"
   } else {
-    Write-Bedroom DashboardLog "Backend still failed after restart. Check $BackendErr"
+    Write-BedroomDashboardLog "Backend still failed after restart. Check $BackendErr"
   }
 }
 
-function Ensure-Bedroom DashboardFrontend {
+function Ensure-BedroomDashboardFrontend {
   if (Test-PortListening -Port 5173) {
-    Write-Bedroom DashboardLog "Frontend port 5173 is already listening"
+    Write-BedroomDashboardLog "Frontend port 5173 is already listening"
     return
   }
 
   if (-not (Test-Path (Join-Path $ProjectRoot "node_modules"))) {
-    Write-Bedroom DashboardLog "Installing frontend npm packages"
+    Write-BedroomDashboardLog "Installing frontend npm packages"
     Push-Location $ProjectRoot
     try {
       & npm install | Out-Null
@@ -158,7 +158,7 @@ function Ensure-Bedroom DashboardFrontend {
   }
 
   $command = "set BEDROOM_DASHBOARD_HTTPS=true&& npm run dev -- --host 0.0.0.0 --port 5173"
-  Write-Bedroom DashboardLog "Starting frontend on 0.0.0.0:5173"
+  Write-BedroomDashboardLog "Starting frontend on 0.0.0.0:5173"
   Start-Process -FilePath "cmd.exe" `
     -ArgumentList "/c", $command `
     -WorkingDirectory $ProjectRoot `
@@ -173,9 +173,9 @@ if ($QuietHealthy -and (Test-BackendHealth) -and ($BackendOnly -or (Test-PortLis
   exit 0
 }
 
-Write-Bedroom DashboardLog "Auto-recover check started"
-Ensure-Bedroom DashboardBackend
+Write-BedroomDashboardLog "Auto-recover check started"
+Ensure-BedroomDashboardBackend
 if (-not $BackendOnly) {
-  Ensure-Bedroom DashboardFrontend
+  Ensure-BedroomDashboardFrontend
 }
-Write-Bedroom DashboardLog "Auto-recover check finished"
+Write-BedroomDashboardLog "Auto-recover check finished"

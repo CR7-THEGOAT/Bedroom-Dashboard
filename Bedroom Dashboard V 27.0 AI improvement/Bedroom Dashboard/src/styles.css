@@ -12053,15 +12053,15 @@ button {
   --theme-shadow: rgba(1, 8, 13, 0.38);
   --theme-scroll: rgba(126, 231, 188, 0.62);
   --theme-panel-blur: 8px;
-  --Bedroom Dashboard-bg: var(--theme-canvas-end);
-  --Bedroom Dashboard-card: var(--theme-surface);
-  --Bedroom Dashboard-text: var(--theme-text);
-  --Bedroom Dashboard-muted: var(--theme-muted);
-  --Bedroom Dashboard-accent: var(--theme-accent);
-  --Bedroom Dashboard-border: var(--theme-border);
-  --Bedroom Dashboard-glass: var(--theme-control);
-  --Bedroom Dashboard-shadow: var(--theme-shadow);
-  --Bedroom Dashboard-scroll: var(--theme-scroll);
+  --bedroom-dashboard-bg: var(--theme-canvas-end);
+  --bedroom-dashboard-card: var(--theme-surface);
+  --bedroom-dashboard-text: var(--theme-text);
+  --bedroom-dashboard-muted: var(--theme-muted);
+  --bedroom-dashboard-accent: var(--theme-accent);
+  --bedroom-dashboard-border: var(--theme-border);
+  --bedroom-dashboard-glass: var(--theme-control);
+  --bedroom-dashboard-shadow: var(--theme-shadow);
+  --bedroom-dashboard-scroll: var(--theme-scroll);
   color: var(--theme-text);
   background:
     radial-gradient(64rem 38rem at 5% -12%, var(--theme-glow-a), transparent 63%),
@@ -12387,22 +12387,22 @@ button {
 
 /* Shared Bedroom Dashboard design tokens. These win over legacy page-specific colors. */
 .app-shell {
-  --Bedroom Dashboard-bg: #071012;
-  --Bedroom Dashboard-card: rgba(13, 23, 24, 0.9);
-  --Bedroom Dashboard-text: #f3f8f5;
-  --Bedroom Dashboard-muted: #aebbb3;
-  --Bedroom Dashboard-border: rgba(167, 243, 208, 0.2);
-  --Bedroom Dashboard-accent: #86efac;
-  --Bedroom Dashboard-shadow: rgba(0, 0, 0, 0.28);
-  --Bedroom Dashboard-glass: rgba(255, 255, 255, 0.06);
-  --Bedroom Dashboard-scroll: rgba(134, 239, 172, 0.52);
-  color: var(--Bedroom Dashboard-text);
-  scrollbar-color: var(--Bedroom Dashboard-scroll) transparent;
+  --bedroom-dashboard-bg: #071012;
+  --bedroom-dashboard-card: rgba(13, 23, 24, 0.9);
+  --bedroom-dashboard-text: #f3f8f5;
+  --bedroom-dashboard-muted: #aebbb3;
+  --bedroom-dashboard-border: rgba(167, 243, 208, 0.2);
+  --bedroom-dashboard-accent: #86efac;
+  --bedroom-dashboard-shadow: rgba(0, 0, 0, 0.28);
+  --bedroom-dashboard-glass: rgba(255, 255, 255, 0.06);
+  --bedroom-dashboard-scroll: rgba(134, 239, 172, 0.52);
+  color: var(--bedroom-dashboard-text);
+  scrollbar-color: var(--bedroom-dashboard-scroll) transparent;
   scrollbar-width: thin;
 }
 
 .app-shell * {
-  scrollbar-color: var(--Bedroom Dashboard-scroll) transparent;
+  scrollbar-color: var(--bedroom-dashboard-scroll) transparent;
 }
 
 .app-shell ::-webkit-scrollbar {
@@ -12417,7 +12417,7 @@ button {
 .app-shell ::-webkit-scrollbar-thumb {
   border: 2px solid transparent;
   border-radius: 999px;
-  background: var(--Bedroom Dashboard-scroll);
+  background: var(--bedroom-dashboard-scroll);
   background-clip: padding-box;
 }
 
@@ -12427,34 +12427,34 @@ button {
 
 .dashboard.dashboard-theme-white,
 .tools-page.white {
-  --Bedroom Dashboard-bg: #f7faf9;
-  --Bedroom Dashboard-card: rgba(255, 255, 255, 0.94);
-  --Bedroom Dashboard-text: #102019;
-  --Bedroom Dashboard-muted: #4b5f56;
-  --Bedroom Dashboard-border: rgba(16, 32, 25, 0.18);
-  --Bedroom Dashboard-accent: #087f4e;
-  --Bedroom Dashboard-shadow: rgba(15, 32, 25, 0.12);
-  --Bedroom Dashboard-glass: rgba(255, 255, 255, 0.76);
-  --Bedroom Dashboard-scroll: rgba(8, 127, 78, 0.5);
-  color: var(--Bedroom Dashboard-text) !important;
+  --bedroom-dashboard-bg: #f7faf9;
+  --bedroom-dashboard-card: rgba(255, 255, 255, 0.94);
+  --bedroom-dashboard-text: #102019;
+  --bedroom-dashboard-muted: #4b5f56;
+  --bedroom-dashboard-border: rgba(16, 32, 25, 0.18);
+  --bedroom-dashboard-accent: #087f4e;
+  --bedroom-dashboard-shadow: rgba(15, 32, 25, 0.12);
+  --bedroom-dashboard-glass: rgba(255, 255, 255, 0.76);
+  --bedroom-dashboard-scroll: rgba(8, 127, 78, 0.5);
+  color: var(--bedroom-dashboard-text) !important;
 }
 
 .dashboard.dashboard-theme-white :is(h1, h2, h3, h4, strong, button, label, input, select, textarea, span, p, em, small),
 .tools-page.white :is(h1, h2, h3, h4, strong, button, label, input, select, textarea, span, p, em, small) {
-  color: var(--Bedroom Dashboard-text);
+  color: var(--bedroom-dashboard-text);
 }
 
 .dashboard.dashboard-theme-white :is(.panel-heading p, .dash-top p, .tool-readout, em, small, input::placeholder),
 .tools-page.white :is(.panel-heading p, .dash-top p, .tool-readout, em, small, input::placeholder) {
-  color: var(--Bedroom Dashboard-muted) !important;
+  color: var(--bedroom-dashboard-muted) !important;
 }
 
 .dashboard.dashboard-theme-white :is(.panel, .icon-button, .dashboard-widget-panel, .page-menu-panel, .quick-access-dock, input, select, textarea, button),
 .tools-page.white :is(.panel, .tool-panel, input, select, textarea, button) {
-  border-color: var(--Bedroom Dashboard-border) !important;
-  background-color: var(--Bedroom Dashboard-card) !important;
-  color: var(--Bedroom Dashboard-text) !important;
-  box-shadow: 0 10px 28px var(--Bedroom Dashboard-shadow) !important;
+  border-color: var(--bedroom-dashboard-border) !important;
+  background-color: var(--bedroom-dashboard-card) !important;
+  color: var(--bedroom-dashboard-text) !important;
+  box-shadow: 0 10px 28px var(--bedroom-dashboard-shadow) !important;
 }
 
 .dashboard.dashboard-theme-white .page-menu-panel button,
@@ -12542,10 +12542,10 @@ button {
   bottom: max(0.85rem, env(safe-area-inset-bottom, 0px));
   z-index: 9010;
   width: min(250px, calc(100vw - 1.5rem));
-  border: 1px solid var(--Bedroom Dashboard-border);
+  border: 1px solid var(--bedroom-dashboard-border);
   border-radius: 12px;
-  background: color-mix(in srgb, var(--Bedroom Dashboard-card) 92%, transparent);
-  box-shadow: 0 18px 38px var(--Bedroom Dashboard-shadow);
+  background: color-mix(in srgb, var(--bedroom-dashboard-card) 92%, transparent);
+  box-shadow: 0 18px 38px var(--bedroom-dashboard-shadow);
   overflow: hidden;
   backdrop-filter: blur(14px) saturate(1.08);
   -webkit-backdrop-filter: blur(14px) saturate(1.08);
@@ -12565,10 +12565,10 @@ button {
   width: 34px;
   height: 34px;
   place-items: center;
-  border: 1px solid var(--Bedroom Dashboard-border);
+  border: 1px solid var(--bedroom-dashboard-border);
   border-radius: 8px;
-  background: var(--Bedroom Dashboard-glass);
-  color: var(--Bedroom Dashboard-text);
+  background: var(--bedroom-dashboard-glass);
+  color: var(--bedroom-dashboard-text);
 }
 
 .quick-access-dock.collapsed .quick-access-toggle { top: 5px; right: 5px; }
@@ -12582,7 +12582,7 @@ button {
 }
 
 .quick-access-heading strong { font-size: 0.84rem; }
-.quick-access-heading button { border: 0; background: transparent; color: var(--Bedroom Dashboard-accent); font-weight: 900; }
+.quick-access-heading button { border: 0; background: transparent; color: var(--bedroom-dashboard-accent); font-weight: 900; }
 
 .quick-access-actions {
   display: grid;
@@ -12597,10 +12597,10 @@ button {
   min-height: 38px;
   align-items: center;
   gap: 0.38rem;
-  border: 1px solid var(--Bedroom Dashboard-border);
+  border: 1px solid var(--bedroom-dashboard-border);
   border-radius: 8px;
-  background: var(--Bedroom Dashboard-glass);
-  color: var(--Bedroom Dashboard-text);
+  background: var(--bedroom-dashboard-glass);
+  color: var(--bedroom-dashboard-text);
   font-size: 0.72rem;
   font-weight: 850;
 }
@@ -12643,7 +12643,7 @@ button {
 .dashboard-custom-controls { min-width: 0; }
 .preset-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 0.48rem; margin-top: 0.75rem; }
 .saved-preset-list { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.58rem; }
-.saved-preset-list button { min-height: 32px; border: 1px solid var(--Bedroom Dashboard-border); border-radius: 7px; background: var(--Bedroom Dashboard-glass); color: var(--Bedroom Dashboard-text); font-size: 0.74rem; font-weight: 800; }
+.saved-preset-list button { min-height: 32px; border: 1px solid var(--bedroom-dashboard-border); border-radius: 7px; background: var(--bedroom-dashboard-glass); color: var(--bedroom-dashboard-text); font-size: 0.74rem; font-weight: 800; }
 
 .apps-layout { grid-template-columns: minmax(280px, 0.72fr) minmax(420px, 1.28fr); }
 .apps-search { width: 100%; min-height: 42px; margin: 0.2rem 0 0.7rem; }
@@ -12651,19 +12651,19 @@ button {
 .apps-grid.compact { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
 .app-add-panel form > button[type="submit"] { min-height: 42px; border: 1px solid rgba(134, 239, 172, 0.45); border-radius: 8px; background: linear-gradient(135deg, rgba(34, 197, 94, 0.25), rgba(14, 116, 144, 0.22)); color: #eafff0; font-weight: 900; }
 .app-add-panel .app-pin-toggle { display: inline-flex; min-height: 42px; align-items: center; gap: 0.5rem; }
-.app-add-panel .app-pin-toggle input { appearance: none; -webkit-appearance: none; display: grid; width: 19px; min-width: 19px; height: 19px; margin: 0; place-items: center; border: 1px solid var(--Bedroom Dashboard-border); border-radius: 5px; background: var(--Bedroom Dashboard-glass); }
+.app-add-panel .app-pin-toggle input { appearance: none; -webkit-appearance: none; display: grid; width: 19px; min-width: 19px; height: 19px; margin: 0; place-items: center; border: 1px solid var(--bedroom-dashboard-border); border-radius: 5px; background: var(--bedroom-dashboard-glass); }
 .app-add-panel .app-pin-toggle input:checked { border-color: rgba(134, 239, 172, 0.8); background: rgba(34, 197, 94, 0.7); }
 .app-add-panel .app-pin-toggle input:checked::after { width: 7px; height: 4px; margin-top: -2px; content: ''; border: solid #062c15; border-width: 0 0 2px 2px; transform: rotate(-45deg); }
-.app-shortcut-card { display: grid; gap: 0.5rem; min-width: 0; padding: 0.58rem; border: 1px solid var(--Bedroom Dashboard-border); border-radius: 9px; background: var(--Bedroom Dashboard-glass); }
+.app-shortcut-card { display: grid; gap: 0.5rem; min-width: 0; padding: 0.58rem; border: 1px solid var(--bedroom-dashboard-border); border-radius: 9px; background: var(--bedroom-dashboard-glass); }
 .app-shortcut-card.tone-blue { border-color: rgba(125, 211, 252, 0.35); }
 .app-shortcut-card.tone-green { border-color: rgba(134, 239, 172, 0.35); }
 .app-shortcut-card.tone-amber { border-color: rgba(251, 191, 36, 0.35); }
 .app-shortcut-card.tone-red { border-color: rgba(248, 113, 113, 0.35); }
-.app-open { display: grid; gap: 0.25rem; min-width: 0; text-align: left; border: 0; background: transparent; color: var(--Bedroom Dashboard-text); }
+.app-open { display: grid; gap: 0.25rem; min-width: 0; text-align: left; border: 0; background: transparent; color: var(--bedroom-dashboard-text); }
 .app-open strong, .app-open span, .app-open em { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.app-open span, .app-open em { color: var(--Bedroom Dashboard-muted); font-size: 0.74rem; font-style: normal; }
+.app-open span, .app-open em { color: var(--bedroom-dashboard-muted); font-size: 0.74rem; font-style: normal; }
 .app-shortcut-actions { display: flex; flex-wrap: wrap; gap: 0.34rem; }
-.app-shortcut-actions button { min-height: 30px; border: 1px solid var(--Bedroom Dashboard-border); border-radius: 6px; background: var(--Bedroom Dashboard-glass); color: var(--Bedroom Dashboard-text); font-size: 0.68rem; font-weight: 850; }
+.app-shortcut-actions button { min-height: 30px; border: 1px solid var(--bedroom-dashboard-border); border-radius: 6px; background: var(--bedroom-dashboard-glass); color: var(--bedroom-dashboard-text); font-size: 0.68rem; font-weight: 850; }
 
 /* AI visual variants. Idle is hidden by the component; the active state gets the animation. */
 .listening-orb { --orb-glow: calc(18px + (var(--ai-glow) * 30px)); }
@@ -15429,27 +15429,27 @@ button {
 .app-shell .dashboard.dashboard-theme-white,
 .app-shell .tools-page.white,
 .app-shell .tools-page.light {
-  --Bedroom Dashboard-bg: #f4f8f6;
-  --Bedroom Dashboard-card: rgba(255, 255, 255, 0.95);
-  --Bedroom Dashboard-text: #102019;
-  --Bedroom Dashboard-muted: #42564b;
-  --Bedroom Dashboard-border: rgba(16, 32, 25, 0.18);
-  --Bedroom Dashboard-glass: rgba(241, 248, 244, 0.92);
-  --Bedroom Dashboard-scroll: rgba(8, 127, 78, 0.58);
-  color: var(--Bedroom Dashboard-text) !important;
+  --bedroom-dashboard-bg: #f4f8f6;
+  --bedroom-dashboard-card: rgba(255, 255, 255, 0.95);
+  --bedroom-dashboard-text: #102019;
+  --bedroom-dashboard-muted: #42564b;
+  --bedroom-dashboard-border: rgba(16, 32, 25, 0.18);
+  --bedroom-dashboard-glass: rgba(241, 248, 244, 0.92);
+  --bedroom-dashboard-scroll: rgba(8, 127, 78, 0.58);
+  color: var(--bedroom-dashboard-text) !important;
 }
 
 .app-shell .dashboard.dashboard-theme-white :is(h1,h2,h3,h4,strong,button,label,input,select,textarea,span,p,em,small),
 .app-shell .tools-page.white :is(h1,h2,h3,h4,strong,button,label,input,select,textarea,span,p,em,small),
 .app-shell .tools-page.light :is(h1,h2,h3,h4,strong,button,label,input,select,textarea,span,p,em,small) {
-  color: var(--Bedroom Dashboard-text) !important;
+  color: var(--bedroom-dashboard-text) !important;
   text-shadow: none !important;
 }
 
 .app-shell .dashboard.dashboard-theme-white :is(.panel-heading p,.dash-top p,.tool-readout,em,small,input::placeholder),
 .app-shell .tools-page.white :is(.panel-heading p,.dash-top p,.tool-readout,em,small,input::placeholder),
 .app-shell .tools-page.light :is(.panel-heading p,.dash-top p,.tool-readout,em,small,input::placeholder) {
-  color: var(--Bedroom Dashboard-muted) !important;
+  color: var(--bedroom-dashboard-muted) !important;
 }
 
 .app-shell .dashboard.dashboard-theme-white .assistant-reply,
@@ -15482,11 +15482,11 @@ button {
   bottom: max(0.85rem, env(safe-area-inset-bottom, 0px)) !important;
   z-index: 9010 !important;
   width: min(260px, calc(100vw - 1.5rem)) !important;
-  border: 1px solid var(--Bedroom Dashboard-border) !important;
+  border: 1px solid var(--bedroom-dashboard-border) !important;
   border-radius: 12px !important;
-  background: color-mix(in srgb, var(--Bedroom Dashboard-card) 92%, transparent) !important;
-  color: var(--Bedroom Dashboard-text) !important;
-  box-shadow: 0 16px 36px var(--Bedroom Dashboard-shadow) !important;
+  background: color-mix(in srgb, var(--bedroom-dashboard-card) 92%, transparent) !important;
+  color: var(--bedroom-dashboard-text) !important;
+  box-shadow: 0 16px 36px var(--bedroom-dashboard-shadow) !important;
   overflow: hidden !important;
 }
 
@@ -15501,39 +15501,39 @@ button {
   gap: 0.64rem;
   width: min(270px, calc(100vw - 1.5rem));
   padding: 0.66rem;
-  border: 1px solid var(--Bedroom Dashboard-border);
+  border: 1px solid var(--bedroom-dashboard-border);
   border-radius: 12px;
-  background: color-mix(in srgb, var(--Bedroom Dashboard-card) 94%, transparent);
-  color: var(--Bedroom Dashboard-text);
-  box-shadow: 0 18px 42px var(--Bedroom Dashboard-shadow);
-  backdrop-filter: blur(var(--Bedroom Dashboard-blur)) saturate(1.06);
-  -webkit-backdrop-filter: blur(var(--Bedroom Dashboard-blur)) saturate(1.06);
+  background: color-mix(in srgb, var(--bedroom-dashboard-card) 94%, transparent);
+  color: var(--bedroom-dashboard-text);
+  box-shadow: 0 18px 42px var(--bedroom-dashboard-shadow);
+  backdrop-filter: blur(var(--bedroom-dashboard-blur)) saturate(1.06);
+  -webkit-backdrop-filter: blur(var(--bedroom-dashboard-blur)) saturate(1.06);
 }
 
 .widget-movement-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 0.6rem; }
 .widget-movement-heading div { display: grid; gap: 0.14rem; min-width: 0; }
 .widget-movement-heading strong { font-size: 0.88rem; }
-.widget-movement-heading span { overflow: hidden; color: var(--Bedroom Dashboard-muted); font-size: 0.75rem; text-overflow: ellipsis; white-space: nowrap; }
-.widget-movement-heading button { display: grid; width: 30px; height: 30px; place-items: center; border: 1px solid var(--Bedroom Dashboard-border); border-radius: 7px; background: var(--Bedroom Dashboard-glass); color: var(--Bedroom Dashboard-text); }
+.widget-movement-heading span { overflow: hidden; color: var(--bedroom-dashboard-muted); font-size: 0.75rem; text-overflow: ellipsis; white-space: nowrap; }
+.widget-movement-heading button { display: grid; width: 30px; height: 30px; place-items: center; border: 1px solid var(--bedroom-dashboard-border); border-radius: 7px; background: var(--bedroom-dashboard-glass); color: var(--bedroom-dashboard-text); }
 .widget-movement-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.38rem; }
-.widget-movement-grid button { min-height: 36px; border: 1px solid var(--Bedroom Dashboard-border); border-radius: 7px; background: var(--Bedroom Dashboard-glass); color: var(--Bedroom Dashboard-text); font-size: 0.72rem; font-weight: 850; }
+.widget-movement-grid button { min-height: 36px; border: 1px solid var(--bedroom-dashboard-border); border-radius: 7px; background: var(--bedroom-dashboard-glass); color: var(--bedroom-dashboard-text); font-size: 0.72rem; font-weight: 850; }
 .widget-movement-grid button:last-child { grid-column: 1 / -1; border-color: rgba(248, 113, 113, 0.45); color: #ffb2b2; }
-.widget-movement-panel p { margin: 0; color: var(--Bedroom Dashboard-muted); font-size: 0.72rem; line-height: 1.35; }
+.widget-movement-panel p { margin: 0; color: var(--bedroom-dashboard-muted); font-size: 0.72rem; line-height: 1.35; }
 
 /* Dashboard Customisation is expressed through shared variables instead of page-specific colors. */
 .app-shell {
-  --Bedroom Dashboard-widget-radius: 8px;
-  --Bedroom Dashboard-widget-gap: 12px;
-  --Bedroom Dashboard-card-alpha: 0.88;
-  --Bedroom Dashboard-font-scale: 1;
-  --Bedroom Dashboard-icon-scale: 1;
-  --Bedroom Dashboard-blur: 12px;
-  --Bedroom Dashboard-shadow-strength: 0.4;
+  --bedroom-dashboard-widget-radius: 8px;
+  --bedroom-dashboard-widget-gap: 12px;
+  --bedroom-dashboard-card-alpha: 0.88;
+  --bedroom-dashboard-font-scale: 1;
+  --bedroom-dashboard-icon-scale: 1;
+  --bedroom-dashboard-blur: 12px;
+  --bedroom-dashboard-shadow-strength: 0.4;
 }
 
 .app-shell .dashboard .dash-grid,
 .app-shell .dashboard .dashboard-stack {
-  gap: var(--Bedroom Dashboard-widget-gap) !important;
+  gap: var(--bedroom-dashboard-widget-gap) !important;
 }
 
 .app-shell .dashboard .panel,
@@ -15541,7 +15541,7 @@ button {
 .app-shell .tools-page .tool-panel,
 .app-shell .quick-access-dock,
 .app-shell .page-menu-panel {
-  border-radius: var(--Bedroom Dashboard-widget-radius) !important;
+  border-radius: var(--bedroom-dashboard-widget-radius) !important;
 }
 
 /* Keep a selected settings card clear of the sticky tools header. */
@@ -15552,25 +15552,25 @@ button {
 .app-shell .dashboard .panel,
 .app-shell .dashboard .dashboard-widget-panel,
 .app-shell .tools-page .tool-panel {
-  background-color: color-mix(in srgb, var(--Bedroom Dashboard-card) calc(var(--Bedroom Dashboard-card-alpha) * 100%), transparent) !important;
-  box-shadow: 0 14px 34px color-mix(in srgb, var(--Bedroom Dashboard-shadow) calc(var(--Bedroom Dashboard-shadow-strength) * 100%), transparent) !important;
+  background-color: color-mix(in srgb, var(--bedroom-dashboard-card) calc(var(--bedroom-dashboard-card-alpha) * 100%), transparent) !important;
+  box-shadow: 0 14px 34px color-mix(in srgb, var(--bedroom-dashboard-shadow) calc(var(--bedroom-dashboard-shadow-strength) * 100%), transparent) !important;
 }
 
 .app-shell .dashboard,
 .app-shell .tools-page {
-  font-size: calc(1rem * var(--Bedroom Dashboard-font-scale));
+  font-size: calc(1rem * var(--bedroom-dashboard-font-scale));
 }
 
 .app-shell .dashboard svg,
 .app-shell .tools-page svg {
-  scale: var(--Bedroom Dashboard-icon-scale);
+  scale: var(--bedroom-dashboard-icon-scale);
 }
 
 .app-shell .dashboard .panel,
 .app-shell .tools-page .tool-panel,
 .app-shell .quick-access-dock {
-  backdrop-filter: blur(var(--Bedroom Dashboard-blur)) saturate(1.04);
-  -webkit-backdrop-filter: blur(var(--Bedroom Dashboard-blur)) saturate(1.04);
+  backdrop-filter: blur(var(--bedroom-dashboard-blur)) saturate(1.04);
+  -webkit-backdrop-filter: blur(var(--bedroom-dashboard-blur)) saturate(1.04);
 }
 
 @media (max-width: 600px) {

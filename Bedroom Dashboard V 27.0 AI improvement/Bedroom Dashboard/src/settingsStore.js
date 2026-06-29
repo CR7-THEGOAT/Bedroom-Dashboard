@@ -143,7 +143,7 @@ function migrateLegacy() {
   return next;
 }
 
-export function loadBedroom DashboardSettings() {
+export function loadBedroomDashboardSettings() {
   try {
     const stored = JSON.parse(localStorage.getItem(BEDROOM_DASHBOARD_SETTINGS_KEY) || 'null');
     if (isRecord(stored)) {
@@ -156,7 +156,7 @@ export function loadBedroom DashboardSettings() {
       if (shouldMigratePrayerMethod) {
         next.prayer = { ...next.prayer, calculationMethod: '16' };
         localStorage.setItem(PRAYER_DUBAI_MIGRATION_KEY, 'true');
-        return saveBedroom DashboardSettings(next);
+        return saveBedroomDashboardSettings(next);
       }
       return next;
     }
@@ -164,11 +164,11 @@ export function loadBedroom DashboardSettings() {
     // Ignore corrupt saved settings and preserve a functional kiosk.
   }
   const migrated = migrateLegacy();
-  saveBedroom DashboardSettings(migrated);
+  saveBedroomDashboardSettings(migrated);
   return migrated;
 }
 
-export function saveBedroom DashboardSettings(value) {
+export function saveBedroomDashboardSettings(value) {
   const next = merge(DEFAULTS, value);
   try {
     localStorage.setItem(BEDROOM_DASHBOARD_SETTINGS_KEY, JSON.stringify(next));
@@ -178,28 +178,28 @@ export function saveBedroom DashboardSettings(value) {
   return next;
 }
 
-export function resetBedroom DashboardSettingsSection(settings, section) {
+export function resetBedroomDashboardSettingsSection(settings, section) {
   if (!Object.prototype.hasOwnProperty.call(DEFAULTS, section)) return settings;
-  return saveBedroom DashboardSettings({ ...settings, [section]: clone(DEFAULTS[section]) });
+  return saveBedroomDashboardSettings({ ...settings, [section]: clone(DEFAULTS[section]) });
 }
 
-export function exportBedroom DashboardSettings(settings) {
-  return JSON.stringify(saveBedroom DashboardSettings(settings), null, 2);
+export function exportBedroomDashboardSettings(settings) {
+  return JSON.stringify(saveBedroomDashboardSettings(settings), null, 2);
 }
 
-export function importBedroom DashboardSettings(serialized) {
+export function importBedroomDashboardSettings(serialized) {
   const parsed = typeof serialized === 'string' ? JSON.parse(serialized) : serialized;
   if (!isRecord(parsed)) throw new Error('Settings file is not valid.');
-  return saveBedroom DashboardSettings(parsed);
+  return saveBedroomDashboardSettings(parsed);
 }
 
-export function useBedroom DashboardSettings() {
-  const [settings, setSettingsState] = useState(loadBedroom DashboardSettings);
+export function useBedroomDashboardSettings() {
+  const [settings, setSettingsState] = useState(loadBedroomDashboardSettings);
 
   const updateSettings = useCallback((patch) => {
     setSettingsState((current) => {
       const nextValue = typeof patch === 'function' ? patch(current) : { ...current, ...patch };
-      return saveBedroom DashboardSettings(nextValue);
+      return saveBedroomDashboardSettings(nextValue);
     });
   }, []);
 
@@ -214,7 +214,7 @@ export function useBedroom DashboardSettings() {
   }, [updateSettings]);
 
   const resetSection = useCallback((section) => {
-    setSettingsState((current) => resetBedroom DashboardSettingsSection(current, section));
+    setSettingsState((current) => resetBedroomDashboardSettingsSection(current, section));
   }, []);
 
   return { settings, updateSettings, updateSection, resetSection };

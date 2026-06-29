@@ -3,9 +3,9 @@ import { createRoot } from 'react-dom/client';
 import { motion, AnimatePresence } from 'framer-motion';
 import SunCalc from 'suncalc';
 import {
-  exportBedroom DashboardSettings,
-  importBedroom DashboardSettings,
-  useBedroom DashboardSettings
+  exportBedroomDashboardSettings,
+  importBedroomDashboardSettings,
+  useBedroomDashboardSettings
 } from './settingsStore';
 import {
   AlarmClock,
@@ -13268,7 +13268,7 @@ function ToolsPage({ now, mode, manualMode, autoColor, setManualMode, dashboardT
     localStorage.removeItem(BACKGROUND_SERVICES_KEY);
     localStorage.removeItem('nexora.clock.mode');
     localStorage.removeItem('nexora.clock.auto');
-    kioskSettings.updateSettings(() => importBedroom DashboardSettings({}));
+    kioskSettings.updateSettings(() => importBedroomDashboardSettings({}));
     setAlarm('06:30');
     setTimeFormat('24');
     setWorldClocks(defaultWorldClocks());
@@ -13292,7 +13292,7 @@ function ToolsPage({ now, mode, manualMode, autoColor, setManualMode, dashboardT
   }
 
   function exportSettingsBackup() {
-    const blob = new Blob([exportBedroom DashboardSettings(kioskSettings.settings)], { type: 'application/json' });
+    const blob = new Blob([exportBedroomDashboardSettings(kioskSettings.settings)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
@@ -13306,7 +13306,7 @@ function ToolsPage({ now, mode, manualMode, autoColor, setManualMode, dashboardT
     const file = event.target.files?.[0];
     if (!file) return;
     try {
-      const next = importBedroom DashboardSettings(await file.text());
+      const next = importBedroomDashboardSettings(await file.text());
       kioskSettings.updateSettings(() => next);
       setDashboardTheme(next.appearance.dashboardTheme);
       setLookStyle(next.appearance.look);
@@ -14750,7 +14750,7 @@ function App() {
   const alarmBrightnessRampRef = useRef(null);
   const cameraFocusWasActiveRef = useRef(false);
   const now = useNow();
-  const kioskSettings = useBedroom DashboardSettings();
+  const kioskSettings = useBedroomDashboardSettings();
   const [assistantSettings, setAssistantSettings] = useAssistantSettings();
   const [locationSettings, setLocationSettings] = useLocationSettings(
     kioskSettings.settings.weather,
@@ -16052,13 +16052,13 @@ function App() {
       ref={shellRef}
       className={`app-shell look-${lookStyle} perf-${performanceMode} lang-${languageSettings.language} phase-${ambientPhase.id} weather-${weatherMood.id} room-${roomMode} ${cameraFocusMode ? 'camera-focus-mode' : ''} ${blackout ? 'blackout-on' : ''} ${effectiveSleepMode ? 'sleep-mode' : ''} ${focusLock ? 'focus-lock-on' : ''} ${idle ? 'ambient-idle' : ''} ${quickControlsOpen ? 'quick-open' : ''}`}
       style={{
-        '--Bedroom Dashboard-widget-radius': `${kioskSettings.settings.appearance.widgetRadius}px`,
-        '--Bedroom Dashboard-widget-gap': `${kioskSettings.settings.appearance.widgetSpacing}px`,
-        '--Bedroom Dashboard-card-alpha': Math.max(0.4, Math.min(1, kioskSettings.settings.appearance.cardTransparency / 100)),
-        '--Bedroom Dashboard-font-scale': kioskSettings.settings.appearance.fontScale / 100,
-        '--Bedroom Dashboard-icon-scale': kioskSettings.settings.appearance.iconScale / 100,
-        '--Bedroom Dashboard-blur': `${kioskSettings.settings.appearance.blurStrength}px`,
-        '--Bedroom Dashboard-shadow-strength': kioskSettings.settings.appearance.shadowStrength / 100
+        '--bedroom-dashboard-widget-radius': `${kioskSettings.settings.appearance.widgetRadius}px`,
+        '--bedroom-dashboard-widget-gap': `${kioskSettings.settings.appearance.widgetSpacing}px`,
+        '--bedroom-dashboard-card-alpha': Math.max(0.4, Math.min(1, kioskSettings.settings.appearance.cardTransparency / 100)),
+        '--bedroom-dashboard-font-scale': kioskSettings.settings.appearance.fontScale / 100,
+        '--bedroom-dashboard-icon-scale': kioskSettings.settings.appearance.iconScale / 100,
+        '--bedroom-dashboard-blur': `${kioskSettings.settings.appearance.blurStrength}px`,
+        '--bedroom-dashboard-shadow-strength': kioskSettings.settings.appearance.shadowStrength / 100
       }}
       dir={languageSettings.language === 'ar' ? 'rtl' : 'ltr'}
       lang={languageSettings.language === 'ar' ? 'ar' : 'en'}

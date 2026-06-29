@@ -12,6 +12,24 @@ Bedroom Dashboard is a local smart bedroom kiosk/dashboard with a clock screen, 
 
 ![Dashboard customisation](docs/screenshots/dashboard-customisation.png)
 
+![ESP32 dashboard](docs/screenshots/esp32-dashboard.png)
+
+![ESP32 screen control](docs/screenshots/esp32-screen-control.png)
+
+![ESP32 games](docs/screenshots/esp32-games.png)
+
+## Dashboard And ESP32 Status
+
+The dashboard side is a React/Vite bedroom kiosk with clock, tools, dashboard widgets, music, weather, prayer times, local camera features, signal pages, device controls, and a local Ollama AI assistant. The AI runs locally, but it is still under active work and has bugs that need to be fixed.
+
+The ESP32 side is an efficient smart hub for the room. It has its own web dashboard, ST7789 screen control, DHT22 temperature/humidity readings, Wi-Fi signal quality, LED strip controls, 8x8 matrix control, image/photo upload slots, and browser games. The ESP32 is also still being improved; there is one small game/dashboard focus bug being polished.
+
+See the full ESP32 hardware, wiring, power, and upload notes here:
+
+```text
+docs/ESP32_SMART_HUB.md
+```
+
 ## Important Setup Notes
 
 - ESP32 code needs your Wi-Fi details updated before uploading it to the board.

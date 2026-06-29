@@ -11,7 +11,7 @@ if (-not (Test-Path $WatchdogScript)) {
   throw "Missing watchdog script: $WatchdogScript"
 }
 
-function New-Bedroom DashboardTaskAction {
+function New-BedroomDashboardTaskAction {
   param([string]$Reason)
   return "powershell.exe -NoProfile -ExecutionPolicy Bypass -File `"$RestartScript`" -Reason $Reason"
 }
@@ -69,7 +69,7 @@ try {
     "/Create",
     "/TN", "Bedroom Dashboard Autostart",
     "/SC", "ONLOGON",
-    "/TR", (New-Bedroom DashboardTaskAction "Logon"),
+    "/TR", (New-BedroomDashboardTaskAction "Logon"),
     "/F"
   ) | Out-Null
 
@@ -78,7 +78,7 @@ try {
     "/TN", "Bedroom Dashboard Watchdog",
     "/SC", "MINUTE",
     "/MO", "2",
-    "/TR", (New-Bedroom DashboardTaskAction "Watchdog"),
+    "/TR", (New-BedroomDashboardTaskAction "Watchdog"),
     "/F"
   ) | Out-Null
 
@@ -90,7 +90,7 @@ try {
     "/EC", "System",
     "/MO", $wakeFilter,
     "/RL", "LIMITED",
-    "/TR", (New-Bedroom DashboardTaskAction "Wake"),
+    "/TR", (New-BedroomDashboardTaskAction "Wake"),
     "/F"
   ) | Out-Null
 

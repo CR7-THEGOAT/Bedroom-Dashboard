@@ -127,6 +127,18 @@ These need the real hardware/software installed:
 - Night Light works best on GNOME through `gsettings`.
 - Browser voice is limited by Chrome. Real 24/7 offline hearing now uses the backend Vosk listener with `vosk`, `sounddevice`, and the local model in `models/vosk-model-small-en-us-0.15`.
 
+### ESP32 Smart Hub
+
+The ESP32 side has its own web dashboard, ST7789 screen control, DHT22 temperature/humidity, Wi-Fi quality, LED strip controls, 8x8 matrix control, image/photo upload slots, and browser games. It is designed efficiently so the ST7789 dashboard only repaints changed fields and games run in the browser instead of on the display.
+
+The ESP32 is still being improved and has one small game/dashboard focus bug being polished. The local Ollama AI is also still buggy and needs more fixes.
+
+Full ESP32 parts, wiring, power, upload, API, and game notes are in:
+
+```text
+../../docs/ESP32_SMART_HUB.md
+```
+
 ### Important URLs
 
 ```text
