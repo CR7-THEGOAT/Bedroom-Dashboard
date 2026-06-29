@@ -56,6 +56,6 @@ The original local folder included multi-gigabyte runtime/generated assets. Thes
 - `node_modules`, Python virtual environments, build output, caches, and logs
 - local `.env` files
 - Ollama blobs and downloaded speech model binaries
-- local music, custom media folders, camera/security snapshots, and dashboard backups
+- local music (you can upload your own by putting it in that file), custom media folders, camera/security snapshots, and dashboard backups
 
 Recreate those files on the target machine by running the setup/download scripts.
