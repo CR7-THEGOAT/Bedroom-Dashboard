@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+cd /home/sa3doo/Documents/Bedroom Dashboard
+
+export ALLOW_DEVICE_CONTROL=true
+
+# Start Vite server
+npm run dev -- --host 0.0.0.0 &
+
+# Wait for server
+sleep 8
+
+# Open Firefox fullscreen kiosk
+firefox --kiosk http://localhost:5173/

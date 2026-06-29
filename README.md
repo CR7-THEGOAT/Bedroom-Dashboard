@@ -1,12 +1,61 @@
 # Bedroom Dashboard
 
-This repository contains the cleaned source snapshots for the Kisoke bedroom dashboard project.
+Bedroom Dashboard is a local smart bedroom kiosk/dashboard with a clock screen, widgets, tools, device controls, ESP32 support, and a fully local AI assistant.
 
-The original local folder includes multiple historical versions plus large runtime/generated assets. Those files are intentionally not committed here:
+## Photos
+
+![Clock](docs/screenshots/clock.png)
+
+![Dashboard](docs/screenshots/dashboard.png)
+
+![Tools](docs/screenshots/tools.png)
+
+![Dashboard customisation](docs/screenshots/dashboard-customisation.png)
+
+## Important Setup Notes
+
+- ESP32 code needs your Wi-Fi details updated before uploading it to the board.
+- Recommended device spec: 8 GB RAM.
+- No GPU is required.
+- AI runs fully locally through Ollama.
+- Use the all-in-one setup/download script so Ollama, local AI models, Python packages, Node packages, and the other required tools are installed together.
+
+## Where To Start
+
+The latest snapshot is:
+
+```text
+Bedroom Dashboard V 27.0 AI improvement/Bedroom Dashboard
+```
+
+Use the all-in-one launch/setup files inside that folder:
+
+- Windows: `SETUP FILE.bat` or `START UP.py`
+- Ubuntu/Linux: `SETUP FILE.sh` or `START UP.py`
+- Installer scripts: `scripts/install/` and `scripts/setup/`
+
+The all-in-one setup/download flow is the easiest path because it downloads Ollama/models and the other required software instead of making you install each piece by hand.
+
+## Included Snapshots
+
+This repository keeps multiple historical source snapshots:
+
+- `Bedroom Dashboard Needs Review`
+- `Bedroom Dashboard V 1.0`
+- `Bedroom Dashboard V 2.0`
+- `Bedroom Dashboard V 3.0`
+- `Bedroom Dashboard V 4.0`
+- `Bedroom Dashboard V 5.0`
+- `Bedroom Dashboard V 6.0`
+- `Bedroom Dashboard V 27.0 AI improvement`
+
+## Not Committed
+
+The original local folder included multi-gigabyte runtime/generated assets. These are intentionally excluded from GitHub:
 
 - `node_modules`, Python virtual environments, build output, caches, and logs
 - local `.env` files
-- Ollama blobs and speech model binaries
+- Ollama blobs and downloaded speech model binaries
 - local music, custom media folders, camera/security snapshots, and dashboard backups
 
-Use the scripts and package files inside each version folder to reinstall dependencies and download models on the target machine.
+Recreate those files on the target machine by running the setup/download scripts.
