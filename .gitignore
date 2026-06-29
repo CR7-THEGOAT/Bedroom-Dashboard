@@ -1,0 +1,29 @@
+.env
+.env.*
+!.env.example
+
+node_modules/
+dist/
+build/
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+
+logs/
+*.log
+*.tmp
+*.bak
+
+ollama/
+music/
+Dashboard copybackup/
+Custom Start up audio/
+Custome Alarm Sounds/
+Custome Video Intro/
+Notifications/
+Projects/
+qa-screenshots/
+backend/security_snapshots/
+models/vosk-model*/

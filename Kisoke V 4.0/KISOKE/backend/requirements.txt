@@ -1,0 +1,7 @@
+fastapi
+uvicorn[standard]
+requests
+pyttsx3
+
+# Optional: needed only for backend camera brightness.
+opencv-python-headless

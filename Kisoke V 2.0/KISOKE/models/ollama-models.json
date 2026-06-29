@@ -1,0 +1,11 @@
+{
+  "easy": {
+    "name": "llama3.2:1b",
+    "purpose": "Fast local command handling and short replies"
+  },
+  "hard": {
+    "name": "qwen3:4b",
+    "purpose": "Longer planning, explanations, and complex questions"
+  },
+  "ollama_url": "http://localhost:11434"
+}

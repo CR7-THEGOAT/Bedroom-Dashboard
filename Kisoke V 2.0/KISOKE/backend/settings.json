@@ -1,0 +1,18 @@
+{
+  "assistant_name": "Nexora",
+  "user_display_names": [
+    "Saeed",
+    "Sa3doon"
+  ],
+  "easy_model": "llama3.2:1b",
+  "hard_model": "qwen3:4b",
+  "voice_assistant_enabled": true,
+  "camera_auto_theme": false,
+  "tts_enabled": true,
+  "theme": "dark",
+  "camera_enabled": true,
+  "camera_device": 0,
+  "listen_timeout": 5,
+  "remote_access_note": "Use Wi-Fi host mode or Tailscale Serve for remote access.",
+  "allow_device_control": false
+}
