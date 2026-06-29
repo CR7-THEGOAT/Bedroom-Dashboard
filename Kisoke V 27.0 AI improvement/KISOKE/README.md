@@ -1,7 +1,7 @@
 # KISOKE
 
 Local smart bedroom kiosk for Ubuntu/Linux, with Windows testing support.
-
+                                                                                                                                                                    Hi everyone this Bedroom Dshboard was TESTED and works need at least 8 ram but this works fully on old computer                                                    
 ## Part 1 - Code And What It Does
 
 ### Project Structure
