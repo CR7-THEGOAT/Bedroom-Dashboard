@@ -22,8 +22,8 @@
 // ============================================================
 
 // ---------- WIFI ----------
-const char* WIFI_SSID = "SALIM1-2G";
-const char* WIFI_PASS = "as19701970";
+const char* WIFI_SSID = "WIFI-NAME";
+const char* WIFI_PASS = "WIFI-PASSWORD";
 
 WebServer server(80);
 
