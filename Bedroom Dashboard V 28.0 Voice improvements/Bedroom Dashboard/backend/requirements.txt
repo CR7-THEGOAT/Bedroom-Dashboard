@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+requests
+pyttsx3
+vosk
+sounddevice
+
+# Optional: needed only for backend camera brightness.
+opencv-python-headless
+
+# Optional Windows-only helpers for system volume control.
+pycaw; platform_system == "Windows"
+comtypes; platform_system == "Windows"
