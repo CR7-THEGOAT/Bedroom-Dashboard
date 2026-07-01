@@ -43,7 +43,7 @@ docs/ESP32_SMART_HUB.md
 The latest snapshot is:
 
 ```text
-Bedroom Dashboard V 27.0 AI improvement/Bedroom Dashboard
+Bedroom Dashboard V 28.0 Voice improvements/Bedroom Dashboard
 ```
 
 Use the all-in-one launch/setup files inside that folder:
@@ -66,6 +66,7 @@ This repository keeps multiple historical source snapshots:
 - `Bedroom Dashboard V 5.0`
 - `Bedroom Dashboard V 6.0`
 - `Bedroom Dashboard V 27.0 AI improvement`
+- `Bedroom Dashboard V 28.0 Voice improvements`
 
 ## Not Committed
 
