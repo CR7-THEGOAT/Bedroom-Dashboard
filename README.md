@@ -78,3 +78,6 @@ The original local folder included multi-gigabyte runtime/generated assets. Thes
 - local music (you can upload your own by putting it in that file), custom media folders, camera/security snapshots, and dashboard backups
 
 Recreate those files on the target machine by running the setup/download scripts.
+
+
+we will release a new version and better one like Fully refreshed one in a few months beacuse there are bugs like too many bug i need to fxi an estimte will be released on October but december will be the Most likely on 5/12/26
