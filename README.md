@@ -79,5 +79,11 @@ The original local folder included multi-gigabyte runtime/generated assets. Thes
 
 Recreate those files on the target machine by running the setup/download scripts.
 
-
+## The Camera DEFAULT PASSWORD 2012 
 we will release a new version and better one like Fully refreshed one in a few months beacuse there are bugs like too many bug i need to fxi an estimte will be released on October but december will be the Most likely on 5/12/26
+
+
+
+## Errors We know about and trying to fix 
+1 AI mic
+2 Camera 
