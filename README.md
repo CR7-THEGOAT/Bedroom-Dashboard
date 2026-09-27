@@ -87,3 +87,6 @@ we will release a new version and better one like Fully refreshed one in a few m
 ## Errors We know about and trying to fix 
 1 AI mic
 2 Camera 
+
+## Fixing and Improvments 
+1 use another type of voice detector like siri and alexa
