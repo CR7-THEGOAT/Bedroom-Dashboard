@@ -3,5 +3,6 @@ Before using Bedroom Dashboard:
 1. Open the latest folder: Bedroom Dashboard V 27.0 AI improvement/Bedroom Dashboard
 2. Update the ESP32 sketch with your Wi-Fi name and password before uploading it.
 3. Use the all-in-one setup/download script to install Ollama, AI models, Python packages, Node packages, and other required tools.
-4. Device spec: 8 GB RAM recommended, no GPU needed.
+4. Device spec: 8 GB RAM recommended DDR4 or DDR5 or Intgrated ram , no GPU needed , i5 CPU 9 gen and higher , SSD needed if using the AI  and fast interface or emmc for same but HDD will be alot slower but acceptable ,minmume storage 64gb , operating systeam WIn , Linux (Best Option)
+Specs may change in the future
 5. AI runs fully locally with Ollama.
