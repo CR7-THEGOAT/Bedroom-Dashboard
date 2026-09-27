@@ -89,4 +89,6 @@ we will release a new version and better one like Fully refreshed one in a few m
 2 Camera 
 
 ## Fixing and Improvments 
-1 use another type of voice detector like siri and alexa
+1 use another type of voice detector like siri and alexa  using neuro voice trying to fix it 
+2 bugs in the UI 
+3 i need help 
